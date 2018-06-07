@@ -54,6 +54,7 @@ public class DetailActivity extends AppCompatActivity {
         populateUI(sandwich);
         Picasso.with(this)
                 .load(sandwich.getImage())
+                .placeholder(R.drawable.no_image)
                 .into(ingredientsIv);
 
         setTitle(sandwich.getMainName());
@@ -68,15 +69,27 @@ public class DetailActivity extends AppCompatActivity {
         TextView alsoKnownAsView = (TextView)findViewById(R.id.also_known_tv);
         // I used replaceAll method to hide brackets before displaying the array on textView
         alsoKnownAsView.setText(sandwich.getAlsoKnownAs().toString().replaceAll("\\[|\\]", ""));
+        if (sandwich.getAlsoKnownAs().isEmpty()){
+            alsoKnownAsView.setText(getString(R.string.no_data_found_message));
+        }
 
         TextView placeOfOriginView = (TextView)findViewById(R.id.origin_tv);
         placeOfOriginView.setText(sandwich.getPlaceOfOrigin());
+        if (sandwich.getPlaceOfOrigin().isEmpty()){
+            placeOfOriginView.setText(getString(R.string.no_data_found_message));
+        }
 
         TextView descriptionView = (TextView)findViewById(R.id.description_tv);
         descriptionView.setText(sandwich.getDescription());
+        if (sandwich.getDescription().isEmpty()){
+            descriptionView.setText(getString(R.string.no_data_found_message));
+        }
 
         TextView ingredientsView = (TextView)findViewById(R.id.ingredients_tv);
         // I used replaceAll method to hide brackets before displaying the array on textView
         ingredientsView.setText(sandwich.getIngredients().toString().replaceAll("\\[|\\]", ""));
+        if (sandwich.getIngredients().isEmpty()){
+            ingredientsView.setText(getString(R.string.no_data_found_message));
+        }
     }
 }

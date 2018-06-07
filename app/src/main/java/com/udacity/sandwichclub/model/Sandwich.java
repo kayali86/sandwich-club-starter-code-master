@@ -30,24 +30,12 @@ public class Sandwich {
         return mainName;
     }
 
-    public void setMainName(String mainName) {
-        this.mainName = mainName;
-    }
-
     public List<String> getAlsoKnownAs() {
         return alsoKnownAs;
     }
 
-    public void setAlsoKnownAs(List<String> alsoKnownAs) {
-        this.alsoKnownAs = alsoKnownAs;
-    }
-
     public String getPlaceOfOrigin() {
         return placeOfOrigin;
-    }
-
-    public void setPlaceOfOrigin(String placeOfOrigin) {
-        this.placeOfOrigin = placeOfOrigin;
     }
 
     public String getDescription() {
@@ -70,7 +58,4 @@ public class Sandwich {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
-        this.ingredients = ingredients;
-    }
 }
